@@ -4,6 +4,13 @@ import time
 player_score = 0
 computer_score = 0
 
+print('🪨 - Rock')
+print('✂️ - Scissors')
+print('📄 - Paper')
+print('Y/y - Yes')
+print('N/n - No')
+print()
+
 while True: 
   
     choices = ['rock', 'paper', 'scissors']
@@ -16,7 +23,7 @@ while True:
     
     if player_choice == computer_choice:
         print()
-        print('Computer is thinking....')
+        print('Computer is thinking 🤔....')
         time.sleep(3)
         print()
         print("🖥️  Computer's Choice: ", computer_choice)
@@ -31,11 +38,13 @@ while True:
     elif player_choice == 'rock':
         if computer_choice == 'paper':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: 📄", computer_choice)
             print("🙍 Player's Choice: 🪨 ", player_choice)
+            print()
+            print('Paper covers rock')
             print()
             print('Computer gets the point!! 👎')
             print()
@@ -46,11 +55,13 @@ while True:
 
         if computer_choice == 'scissors':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: ✂️ ", computer_choice)
             print("🙍 Player's Choice: 🪨 ", player_choice)
+            print()
+            print('Rock destroys scissors')
             print()
             print('You get the point!! 👍')
             print()
@@ -63,11 +74,13 @@ while True:
       
         if computer_choice == 'rock':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: 🪨 ", computer_choice)
             print("🙍 Player's Choice: 📄", player_choice)
+            print()
+            print('Paper covers rock')
             print()
             print('You get the point!! 👍')
             print()
@@ -78,12 +91,14 @@ while True:
 
         if computer_choice == 'scissors':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: ✂️ ", computer_choice)
             print("🙍 Player's Choice: 📄", player_choice)
-            print()          
+            print()
+            print('Scissors kills the paper')
+            print()
             print('Computer gets the point!! 👎')
             print()
             computer_score = computer_score + 1
@@ -95,11 +110,13 @@ while True:
       
         if computer_choice == 'rock':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: 🪨 ", computer_choice)
             print("🙍 Player's Choice: ✂️ ", player_choice)
+            print()
+            print('Rock destroys scissors')
             print()
             print('Computer gets the point!! 👎')
             print()
@@ -110,11 +127,13 @@ while True:
 
         if computer_choice == 'paper':
             print()
-            print('Computer is thinking....')
+            print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
             print("🖥️  Computer's Choice: 📄", computer_choice)
             print("🙍 Player's Choice: ✂️ ", player_choice)
+            print()
+            print('Scissors kills the paper')
             print()
             print('You get the point!! 👍')
             print()
@@ -123,9 +142,9 @@ while True:
             print("🖥️  Computer's Score: ", computer_score)
           
     print()
-    play_again = input('Want to play again? (Yes/No): ').lower()
+    play_again = input('Want to play again? (Type y/n or Y/N): ').lower()
 
-    if play_again != 'yes':
+    if play_again != 'y':
       if player_score > computer_score: 
         print()
         print('You win the match!! Hurray! 👍👍👍')
