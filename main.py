@@ -1,172 +1,198 @@
 import random
+
 import time
+
+from tabulate import tabulate
+
 
 player_score = 0
 computer_score = 0
 
-print('🪨 - Rock')
-print('✂️ - Scissors')
-print('📄 - Paper')
+print('🪨  - Rock (r)')
+print('✂️  - Scissors (s)')
+print('📄 - Paper (p)')
 print('Y/y - Yes')
 print('N/n - No')
+print()
+print("Rules:-")
+print("Rock vs Paper → Paper wins")
+print("Paper vs Scissors → Scissors wins")
+print("Scissors vs Rock → Rock wins")
 print()
 
 while True: 
   
-    choices = ['rock', 'paper', 'scissors']
+    choices = ['r', 'p', 's']
 
     computer_choice = random.choice(choices)
     player_choice = None
 
-    while player_choice not in choices:
-        player_choice = input('Rock, Paper or Scissors: ').lower()
-    
-    if player_choice == computer_choice:
-        print()
-        print('Computer is thinking 🤔....')
-        time.sleep(3)
-        print()
-        print("🖥️  Computer's Choice: ", computer_choice)
-        print("🙍 Player's Choice: ", player_choice)
-        print()
-        print('Draw! No one gets the point 🤝')
-        print()
-        print("🖥️  Computer's Score: ", computer_score)
-        print("🙍 Player's Score: ", player_score)
+    while player_choice not in choices and player_choice != 'r' and player_choice != 'p' and player_choice != 's':
+        player_choice = input('R, P or S: ').lower()
       
 
-    elif player_choice == 'rock':
-        if computer_choice == 'paper':
+    if player_choice == 'r':
+
+        if computer_choice == 'r': 
+          print()
+          print('Computer is thinking 🤔....')
+          time.sleep(3)
+          print()
+          print("🖥️  Computer's Choice: 🪨 ", 'rock')
+          print("🙍 Player's Choice: 🪨 ", 'rock')
+          print()
+          print('Draw! No one gets the point 🤝')
+          print()
+          svr = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+          print(tabulate(svr, tablefmt = "grid"))
+        
+        if computer_choice == 'p':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: 📄", computer_choice)
-            print("🙍 Player's Choice: 🪨 ", player_choice)
-            print()
-            print('Paper covers rock')
+            print("🖥️  Computer's Choice: 📄", "paper")
+            print("🙍 Player's Choice: 🪨 ", "rock")
             print()
             print('Computer gets the point!! 👎')
             print()
             computer_score = computer_score + 1
-            print("🖥️  Computer's Score: ", computer_score)
-            print("🙍 Player's Score: ", player_score)
+            rvp = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(rvp, tablefmt = "grid"))
           
 
-        if computer_choice == 'scissors':
+        if computer_choice == 's':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: ✂️ ", computer_choice)
-            print("🙍 Player's Choice: 🪨 ", player_choice)
-            print()
-            print('Rock destroys scissors')
+            print("🖥️  Computer's Choice: ✂️ ", "scissors")
+            print("🙍 Player's Choice: 🪨 ", "rock")
             print()
             print('You get the point!! 👍')
             print()
             player_score = player_score + 1
-            print("🙍 Player's Score: ", player_score)
-            print("🖥️  Computer's Score: ", computer_score)
+            rvs = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(rvs, tablefmt = "grid"))
           
 
-    elif player_choice == 'paper':
+    elif player_choice == 'p':
+
+        if computer_choice == 'p': 
+          print()
+          print('Computer is thinking 🤔....')
+          time.sleep(3)
+          print()
+          print("🖥️  Computer's Choice: 📄 ", 'paper')
+          print("🙍 Player's Choice: 📄 ", 'paper')
+          print()
+          print('Draw! No one gets the point 🤝')
+          print()
+          svr = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+          print(tabulate(svr, tablefmt = "grid"))
       
-        if computer_choice == 'rock':
+        if computer_choice == 'r':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: 🪨 ", computer_choice)
-            print("🙍 Player's Choice: 📄", player_choice)
-            print()
-            print('Paper covers rock')
+            print("🖥️  Computer's Choice: 🪨 ", 'rock')
+            print("🙍 Player's Choice: 📄", "paper")
             print()
             print('You get the point!! 👍')
             print()
             player_score = player_score + 1
-            print("🙍 Player's Score: ", player_score)
-            print("🖥️  Computer's Score: ", computer_score)
+            pvr = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(pvr, tablefmt = "grid"))
           
 
-        if computer_choice == 'scissors':
+        if computer_choice == 's':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: ✂️ ", computer_choice)
-            print("🙍 Player's Choice: 📄", player_choice)
-            print()
-            print('Scissors kills the paper')
+            print("🖥️  Computer's Choice: ✂️ ", 'scissors')
+            print("🙍 Player's Choice: 📄", "paper")
             print()
             print('Computer gets the point!! 👎')
             print()
             computer_score = computer_score + 1
-            print("🖥️  Computer's Score: ", computer_score)
-            print("🙍 Player's Score: ", player_score)
+            pvs = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(pvs, tablefmt = "grid"))
           
 
-    elif player_choice == 'scissors':
+    elif player_choice == 's':
+
+        if computer_choice == 's': 
+          print()
+          print('Computer is thinking 🤔....')
+          time.sleep(3)
+          print()
+          print("🖥️  Computer's Choice: ✂️ ", 'scissors')
+          print("🙍 Player's Choice: ✂️ ", 'scissors')
+          print()
+          print('Draw! No one gets the point 🤝')
+          print()
+          svr = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+          print(tabulate(svr, tablefmt = "grid"))
+          
       
-        if computer_choice == 'rock':
+        if computer_choice == 'r':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: 🪨 ", computer_choice)
-            print("🙍 Player's Choice: ✂️ ", player_choice)
-            print()
-            print('Rock destroys scissors')
+            print("🖥️  Computer's Choice: 🪨 ", 'rock')
+            print("🙍 Player's Choice: ✂️ ", 'scissors')
             print()
             print('Computer gets the point!! 👎')
             print()
             computer_score = computer_score + 1
-            print("🖥️  Computer's Score: ", computer_score)
-            print("🙍 Player's Score: ", player_score)
+            svr = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(svr, tablefmt = "grid"))
           
 
-        if computer_choice == 'paper':
+        if computer_choice == 'p':
             print()
             print('Computer is thinking 🤔....')
             time.sleep(3)
             print()
-            print("🖥️  Computer's Choice: 📄", computer_choice)
-            print("🙍 Player's Choice: ✂️ ", player_choice)
-            print()
-            print('Scissors kills the paper')
+            print("🖥️  Computer's Choice: 📄", 'paper')
+            print("🙍 Player's Choice: ✂️ ", 'scissors')
             print()
             print('You get the point!! 👍')
             print()
             player_score = player_score + 1
-            print("🙍 Player's Score: ", player_score)
-            print("🖥️  Computer's Score: ", computer_score)
+            svp = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+            print(tabulate(svp, tablefmt = "grid"))
           
     print()
     play_again = input('Want to play again? (Type y/n or Y/N): ').lower()
-
+    print()
+      
     if play_again != 'y':
       if player_score > computer_score: 
         print()
-        print('You win the match!! Hurray! 👍👍👍')
+        table = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+        print(tabulate(table, tablefmt = "grid"))
         print()
-        print("🙍 Player's Score: ", player_score)
-        print("🖥️  Computer's Score: ", computer_score)
+        print('You win the match!! Hurray! 👍👍👍')
         print()
 
       elif player_score == computer_score: 
         print()
-        print('The match is a draw!! No one wins! 🤝🤝🤝')
+        table = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+        print(tabulate(table, tablefmt = "grid"))
         print()
-        print("🙍 Player's Score: ", player_score)
-        print("🖥️  Computer's Score: ", computer_score)
+        print('The match is a draw!! No one wins! 🤝🤝🤝')
         print()
 
       else:
         print()
-        print('You lose this match!! 👎👎👎')
+        table = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
+        print(tabulate(table, tablefmt = "grid"))
         print()
-        print("🙍 Player's Score: ", player_score)
-        print("🖥️  Computer's Score: ", computer_score)
+        print('You lose this match!! 👎👎👎')
         print()
       print('Bye!! 👋')
       break
