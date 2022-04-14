@@ -169,8 +169,14 @@ while True:
     print()
     play_again = input('Want to play again? (Type y/n or Y/N): ').lower()
     print()
-      
-    if play_again != 'y':
+
+    if play_again != 'n' and play_again != 'y':
+      print('Wrong spelling, Type "Y/y" or "N/n"')
+      print()
+      play_again = input('Want to play again? (Type y/n or Y/N): ').lower()
+      print()
+  
+    if play_again == 'n':
       if player_score > computer_score: 
         print()
         table = [["Computer's Score", "Player's Score"], [computer_score, player_score]]
